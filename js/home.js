@@ -25,6 +25,8 @@ document.getElementById('btn-noakhali').addEventListener('click', function () {
         `
         document.getElementById('history-noakhali').appendChild(div);
 
+        document.getElementById('my_modal_1').showModal();
+
     }
 
     else {
@@ -60,6 +62,7 @@ document.getElementById('btn-feni').addEventListener('click', function () {
             <p class="text-[#111111B3] text-sm lg:text-xl">Date: ${new Date().toLocaleDateString()} Time:${new Date().toLocaleTimeString()}</p>
         `
         document.getElementById('history-feni').appendChild(div);
+        document.getElementById('my_modal_1').showModal();
 
     }
 
@@ -95,6 +98,8 @@ document.getElementById('btn-injured').addEventListener('click', function () {
             <p class="text-[#111111B3] text-sm lg:text-xl">Date: ${new Date().toLocaleDateString()} Time:${new Date().toLocaleTimeString()}</p>
         `
         document.getElementById('history-injured').appendChild(div);
+
+        document.getElementById('my_modal_1').showModal();
 
 
     }
