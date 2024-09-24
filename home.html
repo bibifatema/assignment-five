@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Five</title>
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--tailwindCSS CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#111111',
+                        btnColor: '#B4F461',
+                        bgColor: '#F9F7F3',
+                        secondary: ' rgb(255, 255, 255)',
+                        moneyColor: 'rgba(17, 17, 17, 0.7)',
+                        borderColor: 'rgba(17, 17, 17, 0.1)',
+
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!--nav bar-->
+        <nav class="flex flex-col md:flex-row justify-between text-center px-36 py-6 bg-bgColor sticky top-0">
+            <div class="mb-4 md:mb-0">
+                <button class="btn btn-sm text-primary bg-btnColor w-24 h-12 font-bold text-lg">Blog</button>
+            </div>
+            <div class="flex items-center gap-4">
+                <img src="assets/logo.png" alt="">
+                <h2 class="text-primary font-semibold text-xl">Donate Bangladesh</h2>
+            </div>
+            <div class="flex items-center gap-2 justify-center mt-4 md-0">
+                <img src="assets/coin.png" alt="">
+                <h4 id="total-money" class="text-moneyColor font-bold">5500 BDT</h4>
+            </div>
+
+        </nav>
+
+    </main>
+
+    <header class="mt-10 md:mt-20 mx-36 md:mx-36 bg-secondary">
+        <!--button-->
+        <div class="flex justify-center gap-4 pb-8 md:pb-16">
+            <button id="donation-tab"
+                class="btn btn-lg bg-btnColor text-primary font-semibold text-lg w-full md:w-auto">Donation</button>
+            <button id="history-tab"
+                class="btn btn-lg text-moneyColor border-2 border-[#1111114D] w-full md:w-auto">History</button>
+        </div>
+
+        <div id="history-form">
+            <div id="history-noakhali"
+                class="card flex flex-col lg:flex-row justify-center h-auto w-full mb-8 lg:mb-16 gap-8 p-6 lg:p-8 rounded-2xl border-2 border-borderColor">
+            </div>
+
+            <div id="history-feni"
+                class="card flex flex-col lg:flex-row justify-center h-auto w-full mb-8 lg:mb-16 gap-8 p-6 lg:p-8 rounded-2xl border-2 border-borderColor">
+            </div>
+
+            <div id="history-injured"
+                class="card flex flex-col lg:flex-row justify-center h-auto w-full mb-8 lg:mb-16 gap-8 p-6 lg:p-8 rounded-2xl border-2 border-borderColor">
+            </div>
+        </div>
+
+
+        <section id="donation-form" class="mb-8">
+            <!--donate for Noakhali-->
+            <div>
+                <div
+                    class="card flex flex-col lg:flex-row justify-center h-auto w-full mb-8 lg:mb-16 gap-8 p-6 lg:p-8 rounded-2xl border-2 border-borderColor">
+                    <figure class="w-full lg:w-1/2">
+                        <img class="w-full h-auto" src="assets/noakhali.png" alt="" />
+                    </figure>
+                    <div class="card-body  w-full lg:w-1/2">
+                        <div class="flex items-center gap-2 bg-[#1111110D] rounded-lg">
+                            <img src="assets/coin.png" alt="">
+                            <h4 id="money-noakhali" class="bg-[#1111110D] text-moneyColor text-sm lg:text-base">0 BDT
+                            </h4>
+                        </div>
+                        <h2 class="card-title text-primary text-lg lg:text-xl font-bold">Donate for Flood at Noakhali,
+                            Bangladesh</h2>
+                        <p class="text-[#111111B3] text-sm lg:text-xl"> The recent floods in Noakhali have caused
+                            significant damage to<br>homes infrastructure. Your
+                            donation will help provide essential<br> supplies and to those affected by this disaster.
+                            Every
+                            contribution,<br> big or small, makes difference. Please join us in supporting the
+                            relief<br>
+                            efforts and making a positive impact on the lives of those in need.</p>
+
+                        <div class="card-actions">
+                            <input type="number" id="donaton-noakhali" placeholder="Write Donation Amount"
+                                class="text-start input input-bordered btn btn-block text-[#11111166]" required />
+                            <button id="btn-noakhali"
+                                class="btn btn-block bg-btnColor text-primary font-semibold text-lg lg:text-xl">Donate
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Donate for Feni-->
+
+            <div class="">
+                <div
+                    class="card flex flex-col lg:flex-row justify-center h-auto  w-full mb-8 lg:mb-16 gap-8 p-6 lg:p-8 rounded-2xl border-2 border-borderColor">
+                    <figure class="w-full lg:w-1/2">
+                        <img class="w-full h-auto" src="assets/feni.png" />
+                    </figure>
+                    <div class="card-body  w-full lg:w-1/2">
+                        <div class="flex items-center gap-2 h-[44px] w-[138px] bg-[#1111110D] rounded-lg">
+                            <img src="assets/coin.png" alt="">
+                            <h4 id="money-feni" class="bg-[#1111110D] text-moneyColor text-sm">0 BDT</h4>
+                        </div>
+                        <h2 class="card-title text-primary text-lg lg:text-xl font-bold">Donate for Flood Relief in
+                            Feni,Bangladesh</h2>
+                        <p class="text-[#111111B3] text-sm lg:text-xl"> The recent floods in Feni have caused
+                            significant damage to<br>homes infrastructure. Your
+                            donation will help provide essential<br> supplies and to those affected by this disaster.
+                            Every
+                            contribution,<br> big or small, makes difference. Please join us in supporting the
+                            relief<br>
+                            efforts and making a positive impact on the lives of those in need.</p>
+
+                        <div class="card-actions">
+                            <input type="number" id="donation-feni" placeholder="Write Donation Amount"
+                                class="text-start input input-bordered btn btn-block text-[#11111166]" required />
+                            <button id="btn-feni"
+                                class="btn btn-block bg-btnColor text-primary font-semibold text-lg lg:text-xl">Donate
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Aid for Injured-->
+            <div class="">
+                <div
+                    class="card flex flex-col lg:flex-row justify-center h-auto w-full mb-8 lg:mb-16 gap-8 p-6 lg:p-8 rounded-2xl border-2 border-borderColor">
+                    <figure class="w-full lg:w-1/2">
+                        <img class="w-full h-auto" src="assets/quota-protest.png" />
+                    </figure>
+                    <div class="card-body  w-full lg:w-1/2">
+                        <div class="flex items-center gap-2 h-[44px] w-[138px] bg-[#1111110D] rounded-lg">
+                            <img src="assets/coin.png" alt="">
+                            <h4 id="money-injured" class="bg-[#1111110D] text-moneyColor text-sm">0 BDT</h4>
+                        </div>
+                        <h2 class="card-title text-primary text-lg lg:text-xl font-bold">Aid for Injured in the Quota
+                            Movement</h2>
+                        <p class="text-[#111111B3] text-sm lg:text-xl">The recent Quota movement has resulted in
+                            numerous injuries and significant hardship for many individuals. Your support is crucial in
+                            providing medical assistance, rehabilitation, and necessary supplies to those affected. By
+                            contributing, you help ensure that injured individuals receive the care and support they
+                            need during this challenging time. Every donation plays a vital role in alleviating their
+                            suffering and aiding in their recovery. Please consider making a donation to support these
+                            brave individuals in their time of need.</p>
+
+                        <div class="card-actions">
+                            <input type="number" id="donation-injured" placeholder="Write Donation Amount"
+                                class="text-start input input-bordered btn btn-block text-[#11111166]" required />
+                            <button id="btn-injured"
+                                class="btn btn-block bg-btnColor text-primary font-semibold text-lg lg:text-xl">Donate
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </header>
+
+    <footer>
+        <div class="flex flex-col md:flex-row justify-between text-center px-36 py-6 bg-bgColor h-[100px]"></div>
+    </footer>
+
+
+    <script src="js/home.js"></script>
+
+
+</body>
+
+</html>
